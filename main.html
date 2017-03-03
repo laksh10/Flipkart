@@ -1,0 +1,26 @@
+<div id="one" ng-controller="flipctrl" >
+
+     <div  ng-repeat="x in names"  style="margin-top:1%; padding:1%; width:30%; border:1px solid black; height:500px; float:left; margin-left:2%; position:relative;">
+
+     <form name="form1"> 
+                                  <div><h1>{{ x.name }}</h1></div>
+                                   <div><img ng-src= "{{ x.image }}"  alt="pics" style="width:50%; height:100px;" /></div>
+
+                           <p style="font-family:calibri; font-size:20px;">{{ x.content }}</p>
+                            <p id="price1" style="font-family:Calibri; font-size:22px; color:green;"><b>{{ x.price }}</b></p>
+  
+                          <div class="form-group" style="float:left;"> <input type="number" class="form-control" id="input1" ng-model="textbox" min="1" style="border-radius:3px; border:2px solid grey; width:50%;" ng-hide="hiddenbtn[$index]" /></div>
+    
+
+
+         <div id="dis" style="float:left;"> <button type="button" id="button1" ng-hide="hiddenbtn[$index]" ng-click="add($index,x.price,textbox)" class="btn btn-default" style="background-color:deepskyblue; color:white; width:100%; border:2px solid grey; border-radius:3px"> Add to cart</button>
+         </form>
+    </div>
+
+
+<div id="remove" style="clear:both;" ng-show="hiddenbtn[$index]" > This item has been added to cart.<button type="button" ng-click="minus($index,x.price,textbox)" class="btn btn-danger"> Remove </button></div>
+    
+    </div>
+
+
+    
